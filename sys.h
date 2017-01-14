@@ -26,6 +26,13 @@ typedef uintptr_t uintptr;
 #define uchar mk_uchar
 typedef unsigned char uchar;
 
+#define timespecclear(tsp)              (tsp)->tv_sec = (tsp)->tv_nsec = 0
+#define timespecisset(tsp)              ((tsp)->tv_sec || (tsp)->tv_nsec)
+#define timespeccmp(tsp, usp, cmp)                                      \
+        (((tsp)->tv_sec == (usp)->tv_sec) ?                             \
+            ((tsp)->tv_nsec cmp (usp)->tv_nsec) :                       \
+            ((tsp)->tv_sec cmp (usp)->tv_sec))
+
 #ifdef __has_include
   #if __has_include(<stdnoreturn.h>)
     #include <stdnoreturn.h>
