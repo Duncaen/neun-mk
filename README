@@ -1,7 +1,7 @@
-This is a Unix port of mk,
-originally done for the Inferno operating system.
+This is a Unix port of mk, originally done for the Inferno operating system.
+It contains parts from plan9port, inferno and the latest plan9 source tree.
 
-Russ Cox repackaged this to build as a standalone
-Unix program.  Send comments about packaging to
-Russ Cox <rsc@post.harvard.edu>
+See NOTICE, LICENSE and/or README files in each directory.
 
+This fork aims to be 100% compatible with plan9 mk, while adding some small
+improvements and a simpler bootstrap/build process.
