@@ -94,7 +94,7 @@ dorecipe(Node *node)
 					addw(&ln, a->n->name);
 					if(explain)
 						fprint(1, "%s(%ld) < %s(%ld)\n",
-							n->name, n->time, a->n->name, a->n->time);
+							n->name, n->time.tv_sec, a->n->name, a->n->time.tv_sec);
 				}
 			} else {
 				if(explain)

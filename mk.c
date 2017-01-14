@@ -82,7 +82,7 @@ work(Node *node, Node *p, Arc *parc)
 	if((node->flags&MADE) && (node->flags&PRETENDING) && p && outofdate(p, parc, 0)){
 		if(explain)
 			fprint(1, "unpretending %s(%ld) because %s is out of date(%ld)\n",
-				node->name, node->time, p->name, p->time);
+				node->name, node->time.tv_sec, p->name, p->time.tv_sec);
 		unpretend(node);
 	}
 	/*
@@ -146,7 +146,7 @@ work(Node *node, Node *p, Arc *parc)
 		node->flags &= ~CANPRETEND;
 		MADESET(node, MADE);
 		if(explain && ((node->flags&PRETENDING) == 0))
-			fprint(1, "pretending %s has time %ld\n", node->name, node->time);
+			fprint(1, "pretending %s has time %ld\n", node->name, node->time.tv_sec);
 		node->flags |= PRETENDING;
 		return(did);
 	}
@@ -158,7 +158,8 @@ work(Node *node, Node *p, Arc *parc)
 		if(a->n && (a->n->flags&PRETENDING)){
 			if(explain)
 				Bprint(&bout, "unpretending %s because of %s because of %s\n",
-				a->n->name, node->name, ra->n? ra->n->name : "rule with no prerequisites");
+				    a->n->name, node->name,
+				    ra->n ? ra->n->name : "rule with no prerequisites");
 
 			unpretend(a->n);
 			did = work(a->n, node, a) || did;
