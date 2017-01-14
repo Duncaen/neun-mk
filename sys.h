@@ -1,14 +1,13 @@
-#include <utf.h>
-#include <fmt.h>
-#include <bio.h>
-#include <regexp9.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <string.h>
-#include <ctype.h>
-#include <time.h>
 #include <stdint.h>
+
+#include "utf.h"
+#include "fmt.h"
+#include "bio.h"
+
+/*
+ * compiler directive on Plan 9
+ */
+#define USED(x)	if(x){}else{}
 
 #define OREAD		O_RDONLY
 #define OWRITE	O_WRONLY
@@ -18,27 +17,23 @@
 #define seek lseek
 #define remove unlink
 #define exits(x)	exit(x && *(char*)x ? 1 : 0)
-#define USED(x)	if(x){}else{}
-#define create(name, mode, perm)	open(name, mode|O_CREAT, perm)
-#define ERRMAX	256
 
-typedef uintptr_t uintptr;
-#define uchar mk_uchar
+/*
+ * easiest way to make sure these are defined
+ */
+#define uchar _mk_uchar
+#define uchar	_mk_uchar
+#define ushort	_mk_ushort
+#define uint	_mk_uint
+#define ulong	_mk_ulong
+#define uintptr	_mk_uintptr
+#define uvlong	_mk_uvlong
+#define vlong	_mk_vlong
+typedef long long	vlong;
+typedef unsigned long long	uvlong;
+typedef unsigned char		uchar;
+typedef unsigned short		ushort;
+typedef unsigned int		uint;
+typedef unsigned long		ulong;
 typedef unsigned char uchar;
-
-#define timespecclear(tsp)              (tsp)->tv_sec = (tsp)->tv_nsec = 0
-#define timespecisset(tsp)              ((tsp)->tv_sec || (tsp)->tv_nsec)
-#define timespeccmp(tsp, usp, cmp)                                      \
-        (((tsp)->tv_sec == (usp)->tv_sec) ?                             \
-            ((tsp)->tv_nsec cmp (usp)->tv_nsec) :                       \
-            ((tsp)->tv_sec cmp (usp)->tv_sec))
-
-#ifdef __has_include
-  #if __has_include(<stdnoreturn.h>)
-    #include <stdnoreturn.h>
-  #else
-    #define noreturn /**/
-  #endif
-#else
-  #define noreturn /**/
-#endif
+typedef uintptr_t uintptr;

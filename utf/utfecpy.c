@@ -14,7 +14,6 @@
 #include <stdarg.h>
 #include <string.h>
 
-#include "utf.h"
 
 char*
 utfecpy(char *to, char *e, char *from)

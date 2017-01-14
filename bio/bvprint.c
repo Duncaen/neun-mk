@@ -1,6 +1,3 @@
-#include "utf.h"
-#include "bio.h"
-#include "fmt.h"
 
 static int
 fmtBflush(Fmt *f)

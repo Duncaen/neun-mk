@@ -2,9 +2,6 @@
 #include	<fcntl.h>
 #include	<unistd.h>
 
-#include	"utf.h"
-#include	"bio.h"
-#include	"fmt.h"
 
 enum
 {

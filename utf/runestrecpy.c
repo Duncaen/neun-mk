@@ -13,8 +13,6 @@
  */
 #include <stdarg.h>
 #include <string.h>
-#include "plan9.h"
-#include "utf.h"
 
 Rune*
 runestrecpy(Rune *s1, Rune *es1, Rune *s2)

@@ -1,7 +1,5 @@
 #include	<unistd.h>
 
-#include	"utf.h"
-#include	"bio.h"
 
 int
 Bflush(Biobuf *bp)

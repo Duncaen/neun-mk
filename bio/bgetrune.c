@@ -1,5 +1,3 @@
-#include	"utf.h"
-#include	"bio.h"
 
 long
 Bgetrune(Biobuf *bp)

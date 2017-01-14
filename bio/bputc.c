@@ -1,5 +1,3 @@
-#include	"utf.h"
-#include	"bio.h"
 
 int
 Bputc(Biobuf *bp, int c)

@@ -2,8 +2,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#include "utf.h"
-#include "fmt.h"
 #include "regexp9.h"
 
 void

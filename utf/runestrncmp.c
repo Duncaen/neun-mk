@@ -13,8 +13,6 @@
  */
 #include <stdarg.h>
 #include <string.h>
-#include "plan9.h"
-#include "utf.h"
 
 int
 runestrncmp(Rune *s1, Rune *s2, long n)

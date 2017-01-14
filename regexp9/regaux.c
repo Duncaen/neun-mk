@@ -1,6 +1,5 @@
 #include <string.h>
 
-#include "utf.h"
 #include "regexp9.h"
 #include "regcomp.h"
 

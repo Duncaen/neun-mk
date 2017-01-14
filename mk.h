@@ -1,4 +1,30 @@
-#include "sys.h"
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
+#include <ctype.h>
+#include <time.h>
+
+#include "regexp9.h"
+
+#define ERRMAX	256
+
+#define timespecclear(tsp)              (tsp)->tv_sec = (tsp)->tv_nsec = 0
+#define timespecisset(tsp)              ((tsp)->tv_sec || (tsp)->tv_nsec)
+#define timespeccmp(tsp, usp, cmp)                                      \
+        (((tsp)->tv_sec == (usp)->tv_sec) ?                             \
+            ((tsp)->tv_nsec cmp (usp)->tv_nsec) :                       \
+            ((tsp)->tv_sec cmp (usp)->tv_sec))
+
+#ifdef __has_include
+  #if __has_include(<stdnoreturn.h>)
+    #include <stdnoreturn.h>
+  #else
+    #define noreturn /**/
+  #endif
+#else
+  #define noreturn /**/
+#endif
 
 #undef assert
 #define	assert	mkassert

@@ -14,8 +14,6 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdlib.h>
-#include "plan9.h"
-#include "utf.h"
 
 Rune*
 runestrdup(Rune *s) 

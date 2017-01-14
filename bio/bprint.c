@@ -1,5 +1,3 @@
-#include	"utf.h"
-#include	"bio.h"
 
 int
 Bprint(Biobuf *bp, char *fmt, ...)

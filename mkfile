@@ -1,4 +1,4 @@
-CFLAGS=-g -O2 -Wall -Wextra -Wpedantic -Werror -fstack-protector-strong -g -I.
+CFLAGS=-g -O2 -Wall -Wextra -Wpedantic -Werror -fstack-protector-strong -g -I. -include sys.h
 CPPFLAGS='-D_FORTIFY_SOURCE='2
 LDFLAGS=-L.
 

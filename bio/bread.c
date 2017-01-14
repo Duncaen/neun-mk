@@ -1,8 +1,6 @@
 #include	<unistd.h>
 #include	<string.h>
 
-#include	"utf.h"
-#include	"bio.h"
 
 long
 Bread(Biobuf *bp, void *ap, long count)

@@ -13,8 +13,6 @@
  */
 #include <stdarg.h>
 #include <string.h>
-#include "plan9.h"
-#include "utf.h"
 
 char*
 utfrune(char *s, long c)

@@ -11,8 +11,6 @@
 #else
 #include <stdlib.h>
 #include <string.h>
-#include "plan9.h"
-#include "fmt.h"
 #include "fmtdef.h"
 #endif
 

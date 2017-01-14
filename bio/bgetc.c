@@ -1,8 +1,6 @@
 #include	<unistd.h>
 #include	<string.h>
 
-#include	"utf.h"
-#include	"bio.h"
 
 int
 Bgetc(Biobuf *bp)

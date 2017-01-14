@@ -90,9 +90,9 @@ atouch(char *name)
 
 	fd = open(archive, ORDWR);
 	if(fd < 0){
-		fd = create(archive, OWRITE, 0666);
+		fd = creat(archive, 0666);
 		if(fd < 0){
-			fprint(2, "create %s: %r\n", archive);
+			fprint(2, "creat %s: %r\n", archive);
 			Exit();
 		}
 		USED(write(fd, ARMAG, SARMAG));
